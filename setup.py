@@ -18,7 +18,9 @@ setup(
     install_requires=[
         'backoff==1.8.0',
         'singer-python==5.12.2',
-        'python-amazon-sp-api==0.12.4'
+        'python-amazon-sp-api==0.10.5',    # STARA STABILNA VERZIJA!
+        'boto3==1.26.0',                   # DODAJ OVO
+        'botocore==1.29.0'                 # DODAJ OVO
     ],
     entry_points="""
     [console_scripts]
