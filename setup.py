@@ -8,7 +8,7 @@ with open(join(ROOT_DIR, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="tap-amazon-sp",
-    version="0.1.4",
+    version="0.1.5",  # Povećaj verziju
     description="Singer ETL tap for extracting data from the Amazon Selling Partner API",
     long_description=readme,
     author="Stitch",
@@ -18,9 +18,9 @@ setup(
     install_requires=[
         'backoff==1.8.0',
         'singer-python==5.12.2',
-        'python-amazon-sp-api==0.10.5',    # STARA STABILNA VERZIJA!
-        'boto3==1.26.0',                   # DODAJ OVO
-        'botocore==1.29.0'                 # DODAJ OVO
+        'python-amazon-sp-api>=1.9.0',  # Koristi najnoviju verziju
+        'boto3>=1.26.0',                # Fleksibilnija verzija
+        'botocore>=1.29.0'              # Fleksibilnija verzija
     ],
     entry_points="""
     [console_scripts]
