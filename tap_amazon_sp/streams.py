@@ -67,8 +67,7 @@ class BaseStream:
     def get_credentials(self) -> dict:
         """
         Constructs the credentials object for authenticating with the API.
-
-        :return: A dictionary with secrets
+        Ova verzija ne koristi role_arn za AssumeRole.
         """
         return {
             'refresh_token': self.config['refresh_token'],
@@ -76,7 +75,8 @@ class BaseStream:
             'lwa_client_secret': self.config['client_secret'],
             'aws_access_key': self.config['aws_access_key'],
             'aws_secret_key': self.config['aws_secret_key'],
-            'role_arn': self.config['role_arn'],
+            # Uklanjamo role_arn da ne koristi AssumeRole
+            # 'role_arn': self.config['role_arn'],
         }
 
     def get_marketplaces(self) -> List[Marketplaces]:
